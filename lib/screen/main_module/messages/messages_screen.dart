@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:voiceit/custom_widget/divider_widget.dart';
 import 'package:voiceit/custom_widget/text_widget.dart';
 import 'package:voiceit/helper/constants.dart';
 import 'package:voiceit/model/messages_model.dart';
+import 'package:voiceit/screen/main_module/messages/send_to_screen.dart';
 
 class MessagesScreen extends StatefulWidget {
   @override
@@ -54,10 +56,15 @@ class _MessagesScreenState extends State<MessagesScreen> {
                                 height: 16),
                           ),
                           Flexible(
-                            child: TextWidget(AppConstants.str_addFriends,
-                                fontWeight: FontWeight.w400,
-                                color: AppConstants.clrBlack,
-                                fontSize: AppConstants.size_medium_large),
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>SendToScreen()));
+                              },
+                              child: TextWidget(AppConstants.str_addFriends,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppConstants.clrBlack,
+                                  fontSize: AppConstants.size_medium_large),
+                            ),
                             flex: 1,
                           )
                         ],

@@ -30,6 +30,8 @@ class AppConstants {
   static const Color clrTabCreate = Color(0xFF00BE6E);
   static const Color clrTabNotifications = Color(0xFFFF006E);
   static const Color clrTabProfile = Color(0xFF3A86FF);
+  static const Color clrBackBtn = Color(0xFF8F8F8F);
+  static const Color clrBtnBG = Color(0xFFA6A6A6);
 
   //fonts
   static const String fontRoboto = "Roboto";
@@ -66,6 +68,7 @@ class AppConstants {
   static const String img_round = '$root_image/img_round.png';
   static const String img_search = '$root_image/img_search.png';
   static const String img_sent = '$root_image/img_sent.png';
+  static const String img_share = '$root_image/img_share.png';
 
   //string
   static const String str_app_name = "VoiceIT";
@@ -114,4 +117,7 @@ class AppConstants {
   static const String str_clickHere = 'Click here to add more firends...';
   static const String str_dagensTanker = 'Dagens tanker';
   static const String str_hashTages = '#følesbra #stol #pult #power';
+  static const String str_sendTo = 'SEND TO';
+  static const String str_send = 'SEND';
+  static const String str_shae = 'SHARE';
 }
