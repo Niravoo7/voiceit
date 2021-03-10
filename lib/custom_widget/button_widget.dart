@@ -16,10 +16,10 @@ Widget ButtonWidget(BuildContext context, String name, Function onClick,Color bg
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
+          icon !=null?  Padding(
             padding: const EdgeInsets.only(right: 12),
             child: Image.asset(icon,height: 20,width: 20),
-          ),
+          ):Container(height: 1,),
           TextWidget(name,
               color: AppConstants.clrWhite,
               fontSize: AppConstants.size_large,

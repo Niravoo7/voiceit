@@ -32,6 +32,9 @@ class AppConstants {
   static const Color clrTabProfile = Color(0xFF3A86FF);
   static const Color clrBackBtn = Color(0xFF8F8F8F);
   static const Color clrBtnBG = Color(0xFFA6A6A6);
+  static const Color clrGreyTex = Color(0xFFB0B0B0);
+  static const Color clrGreyBorder = Color(0xFFBBBBBB);
+  static const Color clrGreyBG = Color(0xFFD6D6D6);
 
   //fonts
   static const String fontRoboto = "Roboto";
@@ -69,6 +72,10 @@ class AppConstants {
   static const String img_search = '$root_image/img_search.png';
   static const String img_sent = '$root_image/img_sent.png';
   static const String img_share = '$root_image/img_share.png';
+  static const String img_union = '$root_image/img_union.png';
+  static const String img_xmlid = '$root_image/img_xmlid.png';
+  static const String img_tortoise = '$root_image/img_tortoise.png';
+  static const String img_rabbit = '$root_image/img_rabbit.png';
 
   //string
   static const String str_app_name = "VoiceIT";
@@ -120,4 +127,18 @@ class AppConstants {
   static const String str_sendTo = 'SEND TO';
   static const String str_send = 'SEND';
   static const String str_shae = 'SHARE';
+  static const String str_postTitle = 'Give your post a title...';
+  static const String str_newPost = 'NEW POST';
+  static const String str_stolPower = '#stol #power';
+  static const String str_publishOnProfile = 'PUBLISH ON PROFILE';
+  static const String str_addEffect = 'ADD EFFECT';
+  static const String str_highPitch = 'High pitch';
+  static const String str_highPitchDetail = 'Sounds like fast forward';
+  static const String str_lowPitch = 'Low pitch';
+  static const String str_lowPitchDetail = 'Sounds like slow motion';
+  static const String str_commingSoon = 'Comming soon...';
+  static const String str_done = 'DONE';
+  static const String str_messageFromGunnar = 'Message from Gunnar';
+  static const String str_team = 'Team RøLAN';
+  static const String str_voiceBack = 'VOICE BACK!';
 }

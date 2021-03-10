@@ -57,7 +57,7 @@ class MainScreenState extends State<MainScreen> {
     return WillPopScope(
       onWillPop: () async {
         if (!navigatorKeys[currentTab].currentState.canPop()) {
-          onWillPops(context);
+         // onWillPops(context);
         } else {
           !await navigatorKeys[currentTab].currentState.maybePop();
         }

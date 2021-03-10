@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voiceit/custom_widget/text_widget.dart';
 import 'package:voiceit/helper/constants.dart';
+import 'package:voiceit/screen/main_module/profile/voice_back_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -29,10 +30,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextWidget(AppConstants.str_dagensTanker,
-                    fontWeight: FontWeight.w700,
-                    color: AppConstants.clrWhite,
-                    fontSize: AppConstants.size_double_extra_large),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => VoiceBackScreen()));
+                  },
+                  child: TextWidget(AppConstants.str_dagensTanker,
+                      fontWeight: FontWeight.w700,
+                      color: AppConstants.clrWhite,
+                      fontSize: AppConstants.size_double_extra_large),
+                ),
                 SizedBox(height: 12),
                 TextWidget(AppConstants.str_hashTages,
                     fontWeight: FontWeight.w700,

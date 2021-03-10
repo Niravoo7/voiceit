@@ -7,6 +7,8 @@ import 'package:voiceit/custom_widget/text_widget.dart';
 import 'package:voiceit/helper/constants.dart';
 import 'package:voiceit/model/messages_send_to_model.dart';
 
+import 'new_post_screen.dart';
+
 class SendToScreen extends StatefulWidget {
   @override
   _SendToScreenState createState() => _SendToScreenState();
@@ -18,16 +20,20 @@ class _SendToScreenState extends State<SendToScreen> {
   @override
   void initState() {
     super.initState();
-    sendToModel
-        .add(new SendToModel(Color(0xFF3A86FF), "Team røLAN", "Group message",true));
-    sendToModel.add(new SendToModel(Color(0xFFFF006E), "Gunnar", "Personal message",false));
-    sendToModel.add(new SendToModel(Color(0xFFFB5607), "Odd", "Personal message",false));
-    sendToModel.add(new SendToModel(Color(0xFFFFBE0B), "Adrian", "Personal message",false));
+    sendToModel.add(new SendToModel(
+        Color(0xFF3A86FF), "Team røLAN", "Group message", true));
+    sendToModel.add(new SendToModel(
+        Color(0xFFFF006E), "Gunnar", "Personal message", false));
+    sendToModel.add(
+        new SendToModel(Color(0xFFFB5607), "Odd", "Personal message", false));
+    sendToModel.add(new SendToModel(
+        Color(0xFFFFBE0B), "Adrian", "Personal message", false));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(context,AppConstants.str_sendTo),
+      appBar: CommonAppBar(context, AppConstants.str_sendTo),
       backgroundColor: AppConstants.clrScreenBG,
       body: Container(
         child: Stack(
@@ -52,15 +58,19 @@ class _SendToScreenState extends State<SendToScreen> {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 5),
                                   child: Theme(
-                                    data: ThemeData(unselectedWidgetColor: Colors.blue),
+                                    data: ThemeData(
+                                        unselectedWidgetColor: Colors.blue),
                                     child: Checkbox(
-                                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                      materialTapTargetSize:
+                                          MaterialTapTargetSize.shrinkWrap,
                                       activeColor: AppConstants.clrTabProfile,
-                                        value: sendToModel[index].isCheck, onChanged: (bool value) {
-                                      setState(() {
-                                        sendToModel[index].isCheck = value;
-                                      });
-                                    },),
+                                      value: sendToModel[index].isCheck,
+                                      onChanged: (bool value) {
+                                        setState(() {
+                                          sendToModel[index].isCheck = value;
+                                        });
+                                      },
+                                    ),
                                   ),
                                 ),
                                 Container(
@@ -74,7 +84,8 @@ class _SendToScreenState extends State<SendToScreen> {
                                 Flexible(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       TextWidget(sendToModel[index].name,
                                           fontWeight: FontWeight.w400,
@@ -82,10 +93,12 @@ class _SendToScreenState extends State<SendToScreen> {
                                           fontSize: AppConstants.size_large),
                                       Padding(
                                         padding: const EdgeInsets.only(top: 2),
-                                        child: TextWidget(sendToModel[index].followers,
+                                        child: TextWidget(
+                                            sendToModel[index].followers,
                                             fontWeight: FontWeight.w400,
                                             color: AppConstants.clrFollowers,
-                                            fontSize: AppConstants.size_medium_large),
+                                            fontSize:
+                                                AppConstants.size_medium_large),
                                       )
                                     ],
                                   ),
@@ -97,7 +110,8 @@ class _SendToScreenState extends State<SendToScreen> {
                           flex: 1,
                         ),
                         DividerWidget(
-                            height: 1, width: MediaQuery.of(context).size.width),
+                            height: 1,
+                            width: MediaQuery.of(context).size.width),
                       ],
                     ),
                   );
@@ -107,13 +121,16 @@ class _SendToScreenState extends State<SendToScreen> {
               children: [
                 Container(
                     margin: EdgeInsets.symmetric(horizontal: 18),
-                    child: ButtonWidget(context,AppConstants.str_send,(){},AppConstants.clrTabCreate,AppConstants.img_share)),
+                    child: ButtonWidget(context, AppConstants.str_send, () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>NewPostScreen()));
+                    },
+                        AppConstants.clrTabCreate, AppConstants.img_union)),
                 Container(
-                    margin: EdgeInsets.symmetric(horizontal: 18,vertical: 12),
-                    child: ButtonWidget(context,AppConstants.str_shae,(){},AppConstants.clrBtnBG,AppConstants.img_share))
+                    margin: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                    child: ButtonWidget(context, AppConstants.str_shae, () {},
+                        AppConstants.clrBtnBG, AppConstants.img_share))
               ],
             )
-
           ],
         ),
       ),
