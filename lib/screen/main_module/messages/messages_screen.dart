@@ -5,6 +5,7 @@ import 'package:voiceit/custom_widget/text_widget.dart';
 import 'package:voiceit/helper/constants.dart';
 import 'package:voiceit/model/messages_model.dart';
 import 'package:voiceit/screen/main_module/messages/send_to_screen.dart';
+import 'package:voiceit/screen/main_module/messages/team_screen.dart';
 
 class MessagesScreen extends StatefulWidget {
   @override
@@ -84,89 +85,94 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   padding: EdgeInsets.all(0),
                   itemCount: messagesModels.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 81,
-                      color: AppConstants.clrWhite,
-                      child: Column(
-                        children: [
-                          Flexible(
-                            child: Container(
-                              height: 80,
-                              margin: EdgeInsets.only(right: 16),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    height: 48,
-                                    width: 48,
-                                    margin:
-                                        EdgeInsets.only(left: 16, right: 16),
-                                    decoration: BoxDecoration(
-                                        color: messagesModels[index].roundColor,
-                                        shape: BoxShape.circle),
-                                  ),
-                                  Flexible(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        TextWidget(messagesModels[index].title,
-                                            fontWeight: FontWeight.w700,
-                                            color: AppConstants.clrBlack,
-                                            fontSize: AppConstants.size_large),
-                                        Row(
-                                          children: [
-                                            Container(
-                                              margin: EdgeInsets.only(right: 5),
-                                              child: Image.asset(
-                                                messagesModels[index].image,
-                                                height: 12,
-                                                color: messagesModels[index]
-                                                    .textColor,
-                                              ),
-                                            ),
-                                            TextWidget(
-                                                messagesModels[index].voices,
-                                                fontWeight: FontWeight.w400,
-                                                color: messagesModels[index]
-                                                    .textColor,
-                                                fontSize: AppConstants
-                                                    .size_medium_large),
-                                            Container(
-                                              margin: EdgeInsets.only(
-                                                  left: 10, right: 10),
-                                              child: Container(
-                                                height: 4,
-                                                width: 4,
-                                                decoration: BoxDecoration(
-                                                    color: AppConstants
-                                                        .clrFollowers,
-                                                    shape: BoxShape.circle),
-                                              ),
-                                            ),
-                                            TextWidget(
-                                                messagesModels[index].hour,
-                                                fontWeight: FontWeight.w400,
-                                                color:
-                                                    AppConstants.clrFollowers,
-                                                fontSize: AppConstants
-                                                    .size_medium_large)
-                                          ],
-                                        )
-                                      ],
+                    return GestureDetector(
+                       onTap: (){
+                         Navigator.push(context,MaterialPageRoute(builder: (context)=>TeamScreen()));
+                       },
+                      child: Container(
+                        height: 81,
+                        color: AppConstants.clrWhite,
+                        child: Column(
+                          children: [
+                            Flexible(
+                              child: Container(
+                                height: 80,
+                                margin: EdgeInsets.only(right: 16),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: 48,
+                                      width: 48,
+                                      margin:
+                                          EdgeInsets.only(left: 16, right: 16),
+                                      decoration: BoxDecoration(
+                                          color: messagesModels[index].roundColor,
+                                          shape: BoxShape.circle),
                                     ),
-                                    flex: 1,
-                                  )
-                                ],
+                                    Flexible(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          TextWidget(messagesModels[index].title,
+                                              fontWeight: FontWeight.w700,
+                                              color: AppConstants.clrBlack,
+                                              fontSize: AppConstants.size_large),
+                                          Row(
+                                            children: [
+                                              Container(
+                                                margin: EdgeInsets.only(right: 5),
+                                                child: Image.asset(
+                                                  messagesModels[index].image,
+                                                  height: 12,
+                                                  color: messagesModels[index]
+                                                      .textColor,
+                                                ),
+                                              ),
+                                              TextWidget(
+                                                  messagesModels[index].voices,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: messagesModels[index]
+                                                      .textColor,
+                                                  fontSize: AppConstants
+                                                      .size_medium_large),
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    left: 10, right: 10),
+                                                child: Container(
+                                                  height: 4,
+                                                  width: 4,
+                                                  decoration: BoxDecoration(
+                                                      color: AppConstants
+                                                          .clrFollowers,
+                                                      shape: BoxShape.circle),
+                                                ),
+                                              ),
+                                              TextWidget(
+                                                  messagesModels[index].hour,
+                                                  fontWeight: FontWeight.w400,
+                                                  color:
+                                                      AppConstants.clrFollowers,
+                                                  fontSize: AppConstants
+                                                      .size_medium_large)
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                      flex: 1,
+                                    )
+                                  ],
+                                ),
                               ),
+                              flex: 1,
                             ),
-                            flex: 1,
-                          ),
-                          DividerWidget(
-                              height: 1,
-                              width: MediaQuery.of(context).size.width),
-                        ],
+                            DividerWidget(
+                                height: 1,
+                                width: MediaQuery.of(context).size.width),
+                          ],
+                        ),
                       ),
                     );
                   }),

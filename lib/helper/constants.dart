@@ -35,6 +35,8 @@ class AppConstants {
   static const Color clrGreyTex = Color(0xFFB0B0B0);
   static const Color clrGreyBorder = Color(0xFFBBBBBB);
   static const Color clrGreyBG = Color(0xFFD6D6D6);
+  static const Color clrGreyChatTextField = Color(0xFFEBEBEB);
+  static const Color clrGreySendIcon = Color(0xFFCACACA);
 
   //fonts
   static const String fontRoboto = "Roboto";
@@ -141,4 +143,6 @@ class AppConstants {
   static const String str_messageFromGunnar = 'Message from Gunnar';
   static const String str_team = 'Team RøLAN';
   static const String str_voiceBack = 'VOICE BACK!';
+  static const String str_groupVoice = 'Group voice';
+  static const String str_writeYourReply = 'Write your reply...';
 }

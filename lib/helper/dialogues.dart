@@ -84,7 +84,7 @@ void onLoading(BuildContext context, String strMessage) {
   );
 }
 
-/*Future<bool> onWillPops(BuildContext context) {
+Future<bool> onWillPops(BuildContext context) {
   return showDialog(
         context: context,
         // ignore: deprecated_member_use
@@ -104,4 +104,4 @@ void onLoading(BuildContext context, String strMessage) {
         ),
       ) ??
       false;
-}*/
+}

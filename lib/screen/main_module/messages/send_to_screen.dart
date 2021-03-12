@@ -6,6 +6,7 @@ import 'package:voiceit/custom_widget/divider_widget.dart';
 import 'package:voiceit/custom_widget/text_widget.dart';
 import 'package:voiceit/helper/constants.dart';
 import 'package:voiceit/model/messages_send_to_model.dart';
+import 'package:voiceit/screen/main_module/profile/create_profile_screen.dart';
 
 import 'new_post_screen.dart';
 
@@ -127,7 +128,9 @@ class _SendToScreenState extends State<SendToScreen> {
                         AppConstants.clrTabCreate, AppConstants.img_union)),
                 Container(
                     margin: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
-                    child: ButtonWidget(context, AppConstants.str_shae, () {},
+                    child: ButtonWidget(context, AppConstants.str_shae, () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>CreateProfileScreen()));
+                    },
                         AppConstants.clrBtnBG, AppConstants.img_share))
               ],
             )
